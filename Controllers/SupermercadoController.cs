@@ -77,5 +77,14 @@ namespace Parcial2DDA.Controllers
                 maximo_tiempo = tiempo
             });
         }
+
+        public async Task<IActionResult> BorrarMediciones(Medicion entrada, Medicion salida)
+        {
+            await _service.BorrarMediciones(entrada, salida);
+            return Ok(new
+            {
+                mensaje = "Mediciones borradas correctamente"
+            });
+        }
     }
 }
